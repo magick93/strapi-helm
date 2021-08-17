@@ -11,10 +11,12 @@ image:
   repository: registry.default.com/ry/strapi
   pullPolicy: IfNotPresent
 
+persistence:
+  enabled: true
 #Used NFS as a datastore for this project since I already had a server running.
-nfs:
-  server: "nfs.default.com"
-  path: "/srv/strapi-store"
+# nfs:
+#   server: "nfs.default.com"
+#   path: "/srv/strapi-store"
 
 #Strapi wants to know how its going to be exposed to the outside world through a proxy.
 proxy:
@@ -26,11 +28,11 @@ proxy:
 #RDS or similar can be used here obviously.  Look at strapi's docs for more options: 
 #https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#database
 db:
-  client: mysql
+  client: postgres
   host: "localhost"
   name: strapi
   pass: "strapi-sql-pass"
-  port: "3306"
+  port: "5432"
   username: strapi
 
 #Registry credentials might be required if you have a private registry: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
