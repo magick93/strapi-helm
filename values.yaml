@@ -13,6 +13,7 @@ image:
 
 persistence:
   enabled: true
+  size: 10Gi
 #Used NFS as a datastore for this project since I already had a server running.
 # nfs:
 #   server: "nfs.default.com"

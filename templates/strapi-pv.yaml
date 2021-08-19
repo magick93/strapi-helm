@@ -8,7 +8,4 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
-  nfs:
-    path: {{.Values.nfs.path}}
-    server: {{.Values.nfs.server}}
   persistentVolumeReclaimPolicy: Retain

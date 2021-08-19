@@ -2,7 +2,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ template "strapi-volume-claim" . }}
+  name: {{ template "strapi.chart" . }}
   labels:
     app: {{ template "strapi.fullname" . }}
     chart: {{ template "strapi.chart" . }}
