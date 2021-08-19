@@ -24,15 +24,15 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
-        - name: strapi-volume-claim
+        - name: {{ template "strapi.name" . }}-claim
           persistentVolumeClaim:
-            claimName: strapi-volume-claim
+            claimName: {{ template "strapi.name" . }}-claim
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}"
           terminationMessagePath: "/tmp/my-log"
           volumeMounts:
-            - name: strapi-volume-claim
+            - name: {{ template "strapi.name" . }}-claim
               mountPath: /srv/app
           ports:
             - containerPort: 1337
