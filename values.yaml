@@ -8,7 +8,7 @@ replicaCount: 1
 #Had to make a kubernetes happy version of the strapi docker image.  Look here: https://github.com/ryuheiyokokawa/strapi-docker
 #Might have to host your own registry.  I based above on this: https://github.com/strapi/strapi-docker/strapi/
 image:
-  repository: registry.default.com/ry/strapi
+  repository: hughestech/blockonomist:0.0.1
   pullPolicy: IfNotPresent
 
 persistence:
